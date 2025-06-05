@@ -1,0 +1,132 @@
+/* Full-screen background with the image and a darker transparent overlay */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Ensure that overlay can be positioned on top */
+    background: url('https://i.postimg.cc/9MT5Kdtm/image.jpg'); /* Background image */
+    background-repeat: no-repeat;
+    background-size: cover; /* Make sure the background covers the entire screen */
+    background-position: center; /* Center the background image */
+    width: 100%;
+}
+
+/* Darker overlay */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Stronger dark overlay */
+    z-index: -1; /* Make sure the overlay stays behind the content */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+/* Styling for the login box */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1; /* Ensures the login box appears above the overlay */
+}
+
+/* Title styling */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Subtitle styling */
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for the form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+/* Input field styling */
+.input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus effect on input */
+.input:focus {
+    border-color: #4f7cf9;
+    box-shadow: 0 0 5px rgba(79, 124, 249, 0.5);
+}
+
+/* Button styling */
+.btn {
+    background: linear-gradient(90deg, #4f7cf9, #9b59b6);
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Footer text styling */
+.footer {
+    text-align: center;
+    margin-top: 2rem; /* Increased margin for more space */
+}
+
+/* Link styling */
+.sign-up-link {
+    color: #4f7cf9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hover effect for the link */
+.sign-up-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  

@@ -1,0 +1,624 @@
+/* Reset และพื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* โครงสร้างหลักของหน้า */
+.home-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.home-navbar {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 70px;
+}
+
+/* ตัวอย่าง dropdown สำหรับผู้ใช้ */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 320px; /* ✅ เพิ่มความกว้าง */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 6px;
+  font-size: 14px;
+
+}
+.dropdown-setting {
+  background-color: #ffffff;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  gap: 12px;
+
+}
+
+.profile-summary {
+  background-color: #f8f8ff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 12px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  
+}
+.dropdown-logout {
+  background-color: #f8f8ff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 8px;
+  padding-top: 7.5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-top: 1.5px solid #bcbcbc; /* ✅ เพิ่มเส้นคั่นด้านบน */
+
+}
+.dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-username {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.dropdown-email {
+  font-size: 14px;
+  color: gray;
+}
+/* สไตล์สำหรับเนื้อหาใน dropdown ทั้ง Link และ button */
+.dropdown-content a,
+.dropdown-content button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 300; /* ตัวบาง */
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 8px 12px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  
+}
+
+/* hover effect */
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content button:hover {
+  background-color: #eee;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* ระยะห่างระหว่างเมนู */
+  height: 30px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* รูปแบบข้อความทุกเมนู */
+.nav-links a,
+.nav-links span,
+.nav-links button.dropbtn {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.nav-links :hover {
+  color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+  padding: 2rem;
+  background-image: url('https://i.postimg.cc/ZKJGB9Fn/7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: rgb(255, 255, 255); /* ให้ข้อความสีขาวจะได้มองเห็นชัด */
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* เพิ่ม overlay สีดำโปร่งใสให้อ่านข้อความง่ายขึ้น */
+  z-index: 0;
+}
+
+.hero-title,
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-family: sarabun;
+}
+.hero-description {
+  max-width: 500px;
+  color: white; /* หรือสีเข้มถ้าพื้นหลังสว่าง */
+  font-size: 1rem;
+  line-height: 1.8;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* เพิ่มระยะห่างระหว่างแต่ละส่วน */
+  background-color: rgba(0, 0, 0, 0.5); /* ช่วยให้อ่านง่ายขึ้นบนภาพพื้นหลัง */
+  border-radius: 10px;
+}
+
+.hero-description p {
+  margin-bottom: 1rem;
+}
+
+.carousel-image {
+  width: 80%;
+  height: 550px; /* หรือปรับตามที่ต้องการ */
+  object-fit: cover; /* หรือใช้ contain ถ้าอยากให้ไม่ถูกครอบตัด */
+  border-radius: 10px;
+}
+
+.hero-carousel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.hero-description {
+  flex: 1;
+  text-align: left;
+  min-width: 300px;
+  max-width: 600px;
+  color: white;
+}
+.booking-steps {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.booking-steps h2{
+  color: whitesmoke;
+  font-style: normal;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: sarabun;
+
+}
+
+.step-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bolder;
+  border-radius: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sarabun;
+}
+
+.step-text {
+  font-size: 1rem;
+  color: #fff; /* เปลี่ยนตามพื้นหลัง หากจำเป็น */
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+  background: rgb(16, 170, 10);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background: #41b159;
+}
+
+
+
+
+
+/* Cards Section */
+
+
+  .calendar-container {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .head-table{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #113154;
+    font-family: sarabun;
+
+  }
+
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Dropdown Username */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  position: absolute;
+  right: 0;
+  background-color: #ffffff;
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  border-radius: 8px;
+  overflow: hidden;
+  pointer-events: none; 
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; 
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  color: #333;
+  padding: 12px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-content button:hover {
+  background-color: #a8bbff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.user-name {
+  color: navy !important;
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) !important;
+  display: inline-block;
+}
+.arrow {
+  margin-left: 8px;
+  font-size: 12px;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Modal Content - Card style modern */
+.modal-content {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  position: relative;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 0 15px rgba(56, 131, 255, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+/* ปุ่มกากบาท */
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #888888;
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: #8c8c8c;
+}
+
+/* หัวข้อ */
+.modal-content h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  color: #2b3a67;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* ป้ายกำกับ */
+.modal-content label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 600;
+  color: #384a7c;
+  font-size: 15px;
+}
+
+/* Input fields */
+.modal-content input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #a3b1f9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #002f0a;
+  outline-offset: 2px;
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.modal-content input:focus {
+  border-color: #3853ff;
+  box-shadow: 0 0 8px #a9b8ffaa;
+}
+
+/* ปุ่มกด */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+  gap: 8px;
+}
+
+.btn-cancel,
+.btn-save {
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+/* ปุ่มยกเลิก */
+.btn-cancel {
+  background-color: #cccccd;
+  color: hsl(0, 0%, 100%);
+}
+
+.btn-cancel:hover {
+  background: rgb(197, 197, 197);
+}
+
+/* ปรับ placeholder ให้บางลง */
+input::placeholder {
+  font-weight: 350; /* หรือ 200 ถ้าอยากบางกว่านี้ */
+  font-size: 0.9rem; /* เล็กลงเล็กน้อย */
+  color: #999; /* สีเทาอ่อน */
+}
+
+/* ปุ่มบันทึก */
+.btn-save {
+  background: rgb(16, 170, 10);
+  color: white;
+}
+
+.btn-save:hover {
+  background: #41b159;
+}
+
+/* ปุ่มไอคอน */
+.btn-save svg, .btn-cancel svg {
+  font-size: 18px;
+}
+
+/* ปรับ style ปุ่มใน dropdown ให้เหมือนลิงก์ */
+.link-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #3853ff;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: #1228b4;
+}
+.visualize {
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  padding-top: 20px;
+}
+
+.visualize h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chart {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.chart h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 300px !important;
+}

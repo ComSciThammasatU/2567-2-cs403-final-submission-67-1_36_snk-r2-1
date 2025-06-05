@@ -1,0 +1,189 @@
+/* Page Layout */
+.review-page {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Kanit', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fbff, #eef3fa);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.username {
+  text-align: right;
+  color: green;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #2a5d88;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  text-decoration: none;
+  color: #ddd; /* เพิ่มความชัดเวลาชี้เมาส์ */
+}
+
+.history-navbar {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+}
+
+
+
+
+/* Navbar ที่สอง */
+.navbar-history {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 70px;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+  font-size: medium;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0; /* ลองเคลียร์ margin ล่าง */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ได้ แต่อย่าให้สูงเกิน */
+
+}
+.booking-history {
+margin-top: 100px;
+margin-left: 200px; 
+padding: 20px;
+background-color: #ffffff;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+overflow-x: auto;
+}
+
+
+.booking-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 16px;
+min-width: 600px;
+text-align: center;
+table-layout: fixed;
+}
+
+.booking-table th,
+.booking-table td {
+text-align: center;
+vertical-align: middle;
+padding: 12px;
+border-bottom: 1px solid #ccc;
+}
+
+
+.booking-table th {
+background-color: #2a5d88;
+color: white;
+font-weight: bold;
+position: sticky;
+top: 0;
+z-index: 2;
+}
+
+.booking-table tr:hover {
+background-color: #f1f1f1;
+}
+.booking-table td .icon-info {
+font-size: 22px;
+color: #6c757d; /* โทนเทามินิมอล */
+cursor: pointer;
+transition: color 0.3s ease, transform 0.2s ease;
+padding-right: 0;
+text-align: center;
+}
+
+.booking-table td .icon-info:hover {
+color: #2a5d88; /* น้ำเงินเข้ม */
+transform: scale(1.15);
+filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.booking-table td:last-child {
+padding-right: 0;
+}
+
+.booking-table td:last-child .icon-info {
+margin-right: 0;
+}
+
+@media (max-width: 768px) {
+.booking-history {
+  margin-left: 0;
+  padding: 10px;
+}
+}
+
+.dropdown-sort {
+position: absolute;
+top: 100%;
+left: 0;
+color: #000000;
+background: white;
+border: 1px solid #ccc;
+z-index: 10;
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+padding: 4px 0;
+width: 180px;
+}
+
+.dropdown-sort div {
+padding: 8px 12px;
+cursor: pointer;
+font-size: 14px;
+}
+
+.dropdown-sort div:hover {
+background-color: #f0f0f0;
+}
+.filter-icon {
+filter: invert(1); /* เปลี่ยนสีเป็นขาว */
+width: 16px;
+height: 16px;
+cursor: pointer;
+margin-left: 8px;
+vertical-align: middle;
+}

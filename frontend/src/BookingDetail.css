@@ -1,0 +1,256 @@
+/* Layout หลัก */
+.app-container {
+  display: flex;
+  background: #f5f5f5;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Navbar แรก */
+.booking-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff;
+  margin-left: 200px;
+}
+
+.welcome-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  color: rgb(132, 131, 131);
+  text-align: left;
+}
+
+/* Navbar ที่สอง */
+.navbar-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 70px;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff;
+  margin-left: 200px;
+  font-size: medium;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #163e66;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .menu-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: rgb(255, 255, 255);
+  padding: 50px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.menu-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.sidebar ul li:hover {
+  background: #3d4f61;
+}
+
+/* เนื้อหาหลักของหน้ารายละเอียด */
+.main-content-booking {
+  margin-left: 200px;
+  margin-top: 130px;
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* กล่องรายละเอียด */
+.confirmation-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.confirmation-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+}
+
+.confirmation-details {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirmation-item:last-child {
+  border-bottom: none;
+}
+
+.confirmation-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.confirmation-value {
+  font-size: 16px;
+  color: #333;
+  text-align: right;
+  max-width: 300px;
+}
+
+.button-group-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* สไตล์ปุ่มกลางที่ใช้ทั้ง Link และ Button */
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 220px; /* บังคับให้กว้างเท่ากัน */
+  text-align: center;
+}
+
+/* สีปุ่มเฉพาะ */
+.back-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button {
+  background-color: #ea060a;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #d9363e;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 300px;
+  text-align: center;
+  
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* ลดช่องว่างระหว่างปุ่ม */
+  margin-top: 1rem;
+}
+.modal-buttons button {
+  margin: 0 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #ccc;
+}
+
+.modal-buttons button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+.modal-buttons button:last-child:hover{
+  background-color: #ea060a;
+}
+.modal-buttons button:first-child:hover {
+  background-color: #aaaaaa;
+}
+

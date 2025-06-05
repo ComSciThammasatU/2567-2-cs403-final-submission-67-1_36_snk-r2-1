@@ -1,0 +1,194 @@
+/* Layout หลัก */
+.app-container {
+  display: flex;
+  background: #f5f5f5;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Navbar แรก */
+.booking-navbar {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+}
+
+.welcome-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  color: rgb(132, 131, 131);
+  text-align: left;
+}
+
+.user-name {
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar ที่สอง */
+.navbar-2 {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 70px;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+  font-size: medium;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #000000;
+
+}
+
+
+/* เพิ่มการเปลี่ยนสีและเอฟเฟ็กต์ให้ navbar เมื่อ hover */
+.navbar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #163e66;
+  color: white;
+  padding: 10px;
+  position: fixed; /* ทำให้ Sidebar อยู่ที่ตำแหน่งคงที่ */
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10; /* ตั้งค่า z-index ของ Sidebar ให้อยู่เหนือ Navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content inside the sidebar */
+}
+
+/* Corrected selector for .menu-text */
+.sidebar .menu-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: rgb(255, 255, 255);
+  padding: 50px ;
+}
+
+/* Sidebar Header */
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px; /* Add space below the image */
+}
+
+.menu-icon {
+  width: 120px; /* Adjust the width as needed */
+  height: 120px; /* Adjust the height as needed */
+  object-fit: contain; /* Ensures the image fits within the specified dimensions */
+}
+
+/* Sidebar menu items */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.sidebar ul li:hover {
+  background: #3d4f61;
+}
+
+.confirmation-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.confirmation-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+}
+
+.confirmation-details {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirmation-item:last-child {
+  border-bottom: none;
+}
+
+.confirmation-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.confirmation-value {
+  font-size: 16px;
+  color: #333;
+}
+.back-button-container {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-button-container:hover {
+  background-color: #0056b3; 
+}
+.back-button{
+  text-decoration: none;
+}
+

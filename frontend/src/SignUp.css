@@ -1,0 +1,131 @@
+/* Full-screen background with the image and a darker transparent overlay */
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: url('https://i.postimg.cc/9MT5Kdtm/image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+/* Darker overlay */
+.sign-up-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Styling for the sign-up box */
+.sign-up-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    z-index: 1;
+}
+
+/* Title styling */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Subtitle styling */
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Styling for the form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+/* Input field styling */
+.input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus effect on input */
+.input:focus {
+    border-color: #4f7cf9;
+    box-shadow: 0 0 5px rgba(79, 124, 249, 0.5);
+}
+
+/* Button styling */
+.btn {
+    background: linear-gradient(90deg, #4f7cf9, #9b59b6);
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Footer text styling */
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Link styling */
+.sign-up-link {
+    color: #4f7cf9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hover effect for the link */
+.sign-up-link:hover {
+    text-decoration: underline;
+}

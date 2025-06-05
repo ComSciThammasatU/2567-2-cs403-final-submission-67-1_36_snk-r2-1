@@ -1,0 +1,823 @@
+Booking.css current
+Layout หลัก
+.app-container {
+  display: flex;
+  background: #f5f5f5;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Navbar แรก */
+.booking-navbar {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+}
+
+.welcome-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  color: rgb(132, 131, 131);
+  text-align: left;
+}
+
+.user-name {
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar ที่สอง */
+.navbar-2 {
+  display: flex;
+  justify-content: space-between; /* ทำให้ข้อความอยู่ทางซ้ายสุดและขวาสุด */
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* เพิ่มเงาที่คมชัดขึ้น */
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 70px;
+  left: 0;
+  z-index: 5;
+  border-bottom: 2px solid #ffffff; /* เส้นขอบสีขาว */
+  margin-left: 200px;  /* เพิ่มระยะห่างจาก Sidebar */
+  font-size: medium;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #000000;
+
+}
+
+
+/* เพิ่มการเปลี่ยนสีและเอฟเฟ็กต์ให้ navbar เมื่อ hover */
+.navbar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Sidebar */
+.sidebar {
+background-color: #ffffff;
+width: 200px;
+height: 100vh;
+padding: 20px;
+box-sizing: border-box;
+display: flex;
+font-weight:bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-link {
+color: rgb(0, 0, 0);
+text-decoration: none;
+}
+
+.sidebar-link:hover {
+color: #ddd; /* เพิ่มความชัดเวลาชี้เมาส์ */
+}
+
+.menu-icon {
+  width: 120px; /* Adjust the width as needed */
+  height: 120px; /* Adjust the height as needed */
+  object-fit: contain; /* Ensures the image fits within the specified dimensions */
+}
+.menu-text {
+color: white;
+}
+
+
+
+
+/* เนื้อหาหลัก */
+.main-content-booking {
+  margin-left: 200px; /* เพิ่มระยะห่างจาก Sidebar */
+  width: calc(100% - 200px);
+  padding: 15px;
+  background: #ecf0f1;
+  overflow-y: auto;
+  margin-top: 120px; /* เพิ่มระยะห่างจาก Navbar */
+ 
+}
+
+/* รายการคอร์ท */
+.court-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.court-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in;
+}
+
+/* รูปภาพ */
+.court-item img {
+  width: 350px;
+  height: 230px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* ข้อมูลคอร์ท */
+.court-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.court-info h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.court-description {
+  white-space: pre-line;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.court-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.court-info strong {
+  display: inline-block;
+  width: 90px;
+}
+
+/* ปุ่มจอง */
+.available-button, .unavailable-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.available-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.available-button:hover {
+  background-color: #219150;
+}
+
+.unavailable-button {
+  background-color: #bdc3c7;
+  color: white;
+  border: none;
+  cursor: not-allowed;
+}
+
+
+
+.calendar-wrapper {
+display: flex;
+flex-direction: column;
+align-items: start;
+}
+.react-calendar {
+border: none;
+font-family: 'Arial';
+}
+.date-label {
+white-space: nowrap; /* ป้องกัน label หักบรรทัด */
+font-weight: 600;
+min-width: 150px; /* กำหนดความกว้างขั้นต่ำให้ label เท่ากัน */
+}
+.date-input-group {
+display: flex;
+align-items: center;
+gap: 8px;
+flex: 1; /* ให้ input และปุ่มขยายเต็มพื้นที่ที่เหลือ */
+}
+.date-input {
+width: 200px;
+padding: 8px 12px;
+font-size: 16px;
+border: 1.5px solid #ccc;
+border-radius: 6px;
+cursor: pointer;
+background-color: #fff;
+
+}
+
+
+.search-button {
+padding: 8px 16px;
+font-size: 16px;
+background-color: #2980b9;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+background-color: #1f5f8b;
+}
+
+/* calendar-popup กำหนดตามเดิม */
+.calendar-popup {
+position: absolute;
+z-index: 10;
+margin-top: 5px;
+}
+
+.calendar-modal {
+position: relative;
+background: white;
+padding: 20px;
+max-width: 350px;
+margin: auto;
+border-radius: 8px;
+outline: none;
+}
+
+.calendar-overlay {
+background-color: rgba(0, 0, 0, 0.6);
+position: fixed;
+top: 0; left: 0; right: 0; bottom: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.close-modal-button {
+position: absolute;
+top: 8px;
+right: 12px;
+border: none;
+background: transparent;
+font-size: 24px;
+cursor: pointer;
+}
+
+.search-button {
+margin-left: 12px;
+padding: 8px 16px;
+cursor: pointer;
+}
+
+.time-slot.disabled {
+  background-color: #ededed; /* สีเทา */
+  color: #8f8f8f;
+  cursor: not-allowed;
+  pointer-events: none;
+  justify-content: sp;
+}
+
+
+/* Blue Search Button */
+.search-button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 1rem;
+  border-radius: 8px;  /* Rounded corners */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;  /* Space between the date picker and the button */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Search Button */
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Icon next to the button */
+.search-icon {
+  margin-left: px; /* Space between text and icon */
+}
+.date-card {
+display: flex;
+align-items: center; /* จัดให้อยู่ตรงกลางแนวแกน Y */
+gap: 12px; /* ระยะห่างเท่ากันระหว่างแต่ละองค์ประกอบ */
+flex-wrap: wrap; /* กรณีหน้าจอเล็กจะขึ้นบรรทัดใหม่ */
+background: #fff;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+margin-bottom: 20px;
+
+}
+/* Modal Styles */
+lendar-modal {
+  position: absolute; 
+  background: white;
+  padding-top: 20px; 
+  padding-bottom: 20px;
+  border-radius: 10px;
+  width: 80vw;
+  max-width: 900px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 9999; 
+}
+
+
+.calendar-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* ปุ่มปิด Modal */
+.close-modal-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  color: #333;
+}
+
+/* Overlay สำหรับ Modal */
+.calendar-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* ให้ Overlay อยู่หน้าสุด */
+}
+
+/* ปุ่มเพิ่มกิจกรรม */
+.add-event-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ca
+.add-event-button:hover {
+  background-color: #0056b3; /* สีที่เข้มขึ้นเมื่อ hover */
+}
+
+/* ฟอร์มเพิ่มกิจกรรม */
+.add-event-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ปุ่มต่าง ๆ */
+.open-calendar-button, .add-event-button, .confirm-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open-calendar-button:hover, .confirm-button:hover {
+  background-color: #2563eb; /* สีเข้มขึ้นเมื่อ hover */
+}
+
+/* ฟอร์ม input */
+input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ปรับขนาดของปุ่มสำหรับการยืนยันการจอง */
+.confirm-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #45a049; /* สีที่เข้มขึ้นเมื่อ hover */
+}
+/* Booking.css */
+
+/* Style สำหรับ Modal ทั่วไป */
+.calendar-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.calendar-modal, .event-form-modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 100%;
+}
+
+/* ปิดปุ่มใน Modal */
+.close-modal-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-modal-button:hover {
+  color: #ff6347; /* สีเปลี่ยนเมื่อ hover */
+}
+
+/* Header ของ Modal */
+.calendar-modal-header, .event-form-modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-modal-header h2, .event-form-modal-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Style สำหรับ Event Form Modal */
+.event-form-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form-modal-content label {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.event-form-modal-content input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.event-form-modal-content input[type="time"] {
+  font-family: 'Arial', sans-serif;
+}
+
+/* ปุ่มยืนยันการจอง */
+.confirm-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.confirm-button:hover {
+  background-color: #45a049;
+}
+
+/* ปุ่มเพิ่มกิจกรรมใน Modal */
+.add-event-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-event-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style สำหรับส่วนข้อมูลกิจกรรม */
+.event-form-modal-content input::placeholder {
+  color: #999;
+}
+/* การจัดการสไตล์สำหรับ TimePicker */
+/* Time Picker Container */
+.time-picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Time Picker Label */
+.time-picker-container label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Time Picker Input Field */
+.time-picker-input {
+  font-size: 16px;
+  padding: 12px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Time Picker Input on Focus */
+.time-picker-input:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+}
+
+/* Time Picker Input Placeholder */
+.time-picker-input::placeholder {
+  color: #aaa;
+}
+
+/* Time Picker Input on Hover */
+.time-picker-input:hover {
+  border-color: #27ae60;
+}
+
+/* Time Picker Dropdown */
+.time-picker-dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Time Picker Dropdown Items */
+.time-picker-dropdown .time-option {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Dropdown Items */
+.time-picker-dropdown .time-option:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+
+/* การจัดสไตล์ปุ่ม */
+.add-event-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  border: none;
+}
+
+.add-event-button:hover {
+  background-color: #0056b3;
+}
+/* เพิ่มสไตล์สำหรับ input time */
+.time-picker-input {
+  font-size: 1.2rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 8px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.time-picker-input:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+.time-grid h3{
+  align-items: center;
+}
+
+.time-grid-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* ทำให้ความกว้างของคอลัมน์ทั้งสองเท่ากัน */
+  grid-auto-rows: 60px;           /* ความสูงแต่ละแถวเท่ากัน */
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.time-slot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 100%; /* ทำให้สูงเท่ากับ auto-rows */
+}
+
+.time-slot.booked {
+  background-color: #ffe5e5;
+  color: #a00;
+}
+
+.time-slot.available {
+  background-color: #e7ffe7;
+  color: #080;
+}
+
+.time-range {
+  font-weight: bold;
+}
+
+.status {
+  font-style: italic;
+}
+/* ฟอร์ม Modal */
+.form-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 400px;
+  padding: 20px;
+  position: relative;
+  margin: 50px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* พื้นหลังของ overlay */
+.calendar-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+/* ปุ่มปิด Modal */
+.close-modal-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ชื่อฟอร์ม */
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* กลุ่มฟอร์ม */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ฟิลด์ input */
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ปุ่มยืนยันการจอง */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* เมื่อเปิด Modal */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
