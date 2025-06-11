@@ -15,12 +15,12 @@
 
 # Directory tree ของโปรแกรม
 
-├── Project/<br/>
-├── backend/  # ฝั่งเซิร์ฟเวอร์ (Node.js + Express)<br/>
+├── Project<br/>
+├── backend  # ฝั่งเซิร์ฟเวอร์ (Node.js + Express)<br/>
 │&emsp;├── package-lock.json<br/>
 │&emsp;├── package.json<br/>
 │&emsp;└── server.js<br/>
-├── database/  # โครงสร้างฐานข้อมูล SQL<br/>
+├── database  # โครงสร้างฐานข้อมูล SQL<br/>
 │&emsp;└── gymnasium7.sql<br/>
 ├── frontend/  # ฝั่งผู้ใช้ (React)<br/>
 │&emsp;├── README.md<br/>
